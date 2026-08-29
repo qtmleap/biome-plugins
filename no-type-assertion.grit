@@ -1,7 +1,11 @@
 language js
 
+// import の `as` は別名であって型アサーションではない。radix-ui のような
+// 名前空間パッケージは `import { Progress as ProgressPrimitive }` の形を取る
+// ので、除外しないとコンポーネントを追加するたびに誤検知が出る。
 `$expr as $type` as $match where {
   $type <: not "const",
+  $match <: not within `import $_ from $_`,
   register_diagnostic(
     span=$match,
     message="Avoid `as` type assertion. Use a type guard, narrow with a discriminator, or fix the source type. `as const` is allowed.",
