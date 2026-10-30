@@ -9,7 +9,7 @@ Biome は `plugins` フィールドにローカルの相対パスしか受け付
 git submodule で取り込むのが推奨です。
 
 ```sh
-git submodule add https://github.com/<your-user>/biome-plugins.git biome-plugins
+git submodule add https://github.com/qtmleap/biome-plugins.git biome-plugins
 ```
 
 `biome.json` で参照します。
